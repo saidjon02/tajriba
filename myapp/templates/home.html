@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="title">Products</h1>
+    <div class="row">
+        <div class="col">
+            {% for post in posts %}
+                <div class="card">
+                   <img src="{{ post.image.url }}" alt="" class="card-image">
+                   <h3 class="card-title">{{ post.title }}</h3>
+                   <p class="card-text">{{ post.text }}</p>
+                   <h4 class="price"><b>{{ post.price }}</b></h4>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
